@@ -368,3 +368,45 @@ class Solution {
             }
         }
         return match;}}
+        
+        
+(ques 10):
+
+// Given an array A[] of N positive integers which can contain integers from 1 to P where elements can be repeated or 
+//can be absent from the array. Your task is to count the frequency of all elements from 1 to N.
+// Note: The elements greater than N in the array can be ignored for counting and do 
+//modify the array in-place.
+// N = 5
+// arr[] = {2, 3, 2, 3, 5}
+// P = 5
+// Output:
+// 0 2 2 0 1
+
+class Solution{
+    //Function to count the frequency of all elements from 1 to N in the array.
+    public static void frequencyCount(int arr[], int N, int P)
+    {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < N; i++){
+            if(map.containsKey(arr[i])){
+                map.put(arr[i], map.get(arr[i]) + 1);// map.get gives the value of that key in the map
+            }
+            else{
+                map.put(arr[i], 1);
+            }
+            
+        }
+        
+        int j = 1;
+        for(int i = 0; i < N; i++){
+            if(map.containsKey(j)){
+                arr[i] = map.get(j);
+            }
+            else{
+                arr[i] = 0;
+            }
+            j++;
+        }
+            
+    }
+}
