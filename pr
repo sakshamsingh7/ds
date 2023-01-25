@@ -410,3 +410,46 @@ class Solution{
             
     }
 }
+
+(Ques11)
+// Given an array nums, return true if the array was originally sorted in non-decreasing order, then rotated some number of positions (including zero). Otherwise, return false.
+
+// There may be duplicates in the original array.
+
+// Note: An array A rotated by x positions results in an array B of the same length such that A[i] == B[(i+x) % A.length], where % is the modulo operation.
+
+ 
+
+// Example 1:
+
+// Input: nums = [3,4,5,1,2]
+// Output: true
+// Explanation: [1,2,3,4,5] is the original sorted array.
+
+
+class Solution {
+    public boolean check(int[] nums) {
+        // here we compare all the neighbouring elemnts and check whether they are in somewhat sorted
+        // there will be a small change due to rotation in the array at only one place.
+        // so if there are irregularities more than once, return false
+        // else return true;
+        //here we just have to check for rotated array concept checking the last element with the first if they are sorted and then rotated it will return true else return false
+        //as to rotate an array we use formula
+        //a[i]=a[(i+k%n)] to check(a,b) and also helps in checking cyclic manner as
+      //  1%5=1,2%5=2 ansd so on
+        //when ever we rotate an  sorted array we get a point where b!>a and the left and right part is sorted  we have to just check that that point count must 1 only if it has more then retrn false
+        //also check for last element must be <first element 
+        
+        int c=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>nums[(i+1)%nums.length]){
+
+            c++;
+            }
+        }
+        if(c>1){
+return false;
+        }
+        else return true;
+    }
+}
