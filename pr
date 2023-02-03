@@ -473,3 +473,75 @@ class Solution {
         return c;
     }
 }
+(ques13)
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
+    /*
+     * Complete the 'findDay' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts following parameters:
+     *  1. INTEGER month
+     *  2. INTEGER day
+     *  3. INTEGER year
+     */
+
+    public static String findDay(int month, int day, int year) {
+     String[] arr={"SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"};
+     Calendar obj=Calendar.getInstance();
+     obj.set(year,month-1,day);
+     int p=obj.get(Calendar.DAY_OF_WEEK);//it will give from 1 to 7 so       //  doing -1
+     return arr[p-1];
+     
+     /*
+     Calendar mycalobj=Calendar.getInstance();
+     System.out.println("Today  :" + mycalobj.getTime());  
+      System.out.println("Year  :" + mycalobj.get(Calendar.YEAR));  
+      System.out.println("Month :" + mycalobj.get(Calendar.MONTH));  
+      System.out.println("Day  :" + mycalobj.get(Calendar.DAY_OF_WEEK));*/
+      //you can set the value using .set method..
+      /*mycalobj.set(1996, 5, 23, 10, 15, 20);  
+      System.out.println("Now Today  :" + mycalobj.getTime());  it will give updated time 
+      System.out.println(" Now Year  :" + mycalobj.get(Calendar.YEAR));  
+      System.out.println("Now Month :" + mycalobj.get(Calendar.MONTH));  
+      System.out.println("Now Day  :" + mycalobj.get(Calendar.DAY_OF_WEEK));  */  
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        int month = Integer.parseInt(firstMultipleInput[0]);
+
+        int day = Integer.parseInt(firstMultipleInput[1]);
+
+        int year = Integer.parseInt(firstMultipleInput[2]);
+
+        String res = Result.findDay(month, day, year);
+
+        bufferedWriter.write(res);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
