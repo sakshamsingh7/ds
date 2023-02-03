@@ -545,3 +545,60 @@ public class Solution {
         bufferedWriter.close();
     }
 }
+(ques14)
+import java.util.Scanner;
+
+public class Solution {
+
+    public static String getSmallestAndLargest(String s, int k) {
+  // que=Given a string, s, and an integer, k, complete the function so that it finds the lexicographically smallest and largest substrings of length k .    
+//    The method compareTo() is used for comparing two strings lexicographically in Java. Each character of both the strings is converted into a Unicode value for comparison.
+
+// int compareTo(String str) :
+// It returns the following values:
+
+// if (string1 > string2) it returns a positive value.
+// if both the strings are equal lexicographically i.e.(string1 == string2) it returns 0.
+// if (string1 < string2) it returns a negative value.
+
+String small="zzzzzzzzzzzzzz";
+String large="";
+for(int i=0;i<s.length()-k+1;i++){
+    //as we have done length-k+1  s=welcometojava =13 k=3so iwill go till 11i.e v and we are checking for i,i+k 
+    String orig=s.substring(i,i+k);
+    if(orig.compareTo(small)<0){
+        small=orig;
+    }
+    else{
+       small=small; 
+    }
+    if(orig.compareTo(large)>0){
+        large=orig;
+    }
+    else{
+        large=large;
+    }
+}
+return small+"\n"+large;
+}
+
+//Method 2
+
+//     public static String getSmallestAndLargest(String s, int k) {
+//         String smallest = "";
+//         String largest = "";
+//java.util .ArrayList is used when cant we cant add import java .util.ArrayList   
+//                 java.util.ArrayList<String> l = new java.util.ArrayList<String>();
+//         int i = 0;
+//         while (i+k<=s.length()) {
+//             l.add(s.substring(i, i+k));
+//             i++;
+//         }
+        
+//         java.util.Collections.sort(l);
+        
+//         smallest = l.get(0);
+//         largest = l.get(l.size()-1);
+        
+//         return smallest + "\n" + largest;
+//     }
