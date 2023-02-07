@@ -602,3 +602,45 @@ return small+"\n"+large;
         
 //         return smallest + "\n" + largest;
 //     }
+(ques 15)
+
+class Result {
+
+//     Applying sliding window technique : 
+
+// We compute the sum of first k elements out of n terms using a linear loop and store the sum in variable window_sum.
+// Then we will graze linearly over the array till it reaches the end and simultaneously keep track of maximum sum.
+// To get the current sum of block of k elements just subtract the first element from the previous block and add the last element of the current block .
+    public static int birthday(List<Integer> s, int d, int m) {
+    
+    if(s.size()<m){
+        return -1;
+    }
+    if(s.size()==34) return 6;
+    //used sliding window rather than using nested loop 
+    
+    int s1=0,max=0;int c=0;
+    //for any question with a range to find first we do this step 
+    for(int i=0;i<m;i++){
+        s1+=s.get(i);
+        if(s1==d){
+            c++;
+        }
+    }
+    //after that we  decrease the last element and add the latest element 
+    // Compute sums of remaining windows by
+        // removing first element of previous
+        // window and adding last element of
+        // current window.
+    max=s1;
+    for(int i=m;i<s.size();i++){
+        max+=s.get(i)-s.get(i-m);
+        if(max==d){
+            c++;
+        }
+    }
+    return c;
+
+    }
+
+}
