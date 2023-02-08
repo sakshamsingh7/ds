@@ -644,3 +644,54 @@ class Result {
     }
 
 }
+(ques16)
+
+Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
+
+Example arr=[1,1,2,2,3]
+
+There are two each of types 1 and2 , and one sighting of type 3. Pick the lower of the two types seen twice: type .
+
+Function Description
+
+Complete the migratoryBirds function in the editor below.
+
+migratoryBirds has the following parameter(s):
+
+int arr[n]: the types of birds sighted
+(soln)
+
+class Result {
+
+    /*
+     * Complete the 'migratoryBirds' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static int migratoryBirds(List<Integer> arr) {
+    // Write your code here
+    
+int c[]=new int[6];
+int initial = 0;
+int numOfOccur = 0;
+
+
+for (int i=0; i<arr.size(); i++) {
+    c[arr.get(i)]++;
+}
+
+for (int i=0; i<6; i++) {
+    if (c[i] > numOfOccur) {
+        
+            numOfOccur = c[i];
+            initial = i;// initial me index store hota rahega  and its given that i=1,2,3,4,5 only 0ke liye kuch nhi hoga fir 1 se 5 tak 
+            //ka kam hoga main
+        }
+    
+}
+
+return initial; 
+}
+}
