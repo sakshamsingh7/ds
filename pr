@@ -695,3 +695,24 @@ for (int i=0; i<6; i++) {
 return initial; 
 }
 }
+(ques17)**
+https://www.hackerrank.com/challenges/picking-numbers/problem?isFullScreen=true
+soln
+public static int pickingNumbers(List<Integer> a) {
+    // Write your code here
+    
+    int c[]=new int[101];
+    for(int i=0;i<a.size();i++){
+        c[a.get(i)]++;
+    }
+    int s=0;
+    for(int i=1;i<101;i++){
+        s=Math.max(s,c[i]+c[i-1]);
+        //isme basically count mil ja rha sabhi elements ka aur check karenge ki do  do elements  ka sum  
+        //lete rahenge aur jab sum maximum ho jayega to  vhi longest subarray ho jayega  aur sum return kar denge 
+    }
+    return s;
+
+    }
+
+}
