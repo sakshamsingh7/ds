@@ -697,7 +697,8 @@ return initial;
 }
 (ques17)**
 https://www.hackerrank.com/challenges/picking-numbers/problem?isFullScreen=true
-soln
+(soln)
+link==  https://www.youtube.com/watch?v=PtFAJTCKNn8&list=PLSIpQf0NbcCltzNFrOJkQ4J4AAjW3TSmA
 public static int pickingNumbers(List<Integer> a) {
     // Write your code here
     
