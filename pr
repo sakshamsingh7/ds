@@ -717,3 +717,23 @@ public static int pickingNumbers(List<Integer> a) {
     }
 
 }
+
+(ques 18)
+//Maximum Number of Words Found in Sentences
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+    int c=1;int max1=0;   
+    for(int i=0;i<sentences.length;i++){
+        String arr=sentences[i].toString();//tostring converts array to string;
+        for(int j=0;j<arr.length();j++){
+            if(arr.charAt(j)==' '){//take carre of comparing with character only not this " " but this ' ';
+
+            c++;
+               
+            }
+        }
+         max1=(int)Math.max(max1,c);c=1;
+    }
+        return max1;}}
+
