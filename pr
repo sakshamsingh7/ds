@@ -793,3 +793,28 @@ class Solution {
             res[i] = l.get(i);
         return res;
     }}
+(ques21)
+
+
+//A defanged IP address replaces every period "." with "[.]".
+class Solution {
+    public String defangIPaddr(String c) {
+        //char c[]=address.toCharArray();
+       
+       
+      //  return c.replace(".","[.]"); // replace will work on all over the striing;
+//     }
+// }
+        // //using stringbuilder method
+
+StringBuilder st=new StringBuilder();
+for(int i=0;i<c.length();i++){
+
+if(c.charAt(i)=='.'){
+    st.append("[.]");
+}
+    else{
+        st.append(c.charAt(i));
+    }
+    }
+return st.toString();}}
